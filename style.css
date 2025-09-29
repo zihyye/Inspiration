@@ -84,10 +84,10 @@ main {
 }
 
 .image-column img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* 가로 너비는 부모 요소에 꽉 채우고 */
+    height: 600px; /* 세로 길이를 원하는 값으로 고정 */
+    object-fit: cover; /* 비율을 유지한 채로, 남는 부분은 잘라냄 */
     display: block;
-        max-height: 600px; /* 이 부분을 추가하거나 수정하세요 */
 }
 }
 

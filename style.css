@@ -87,6 +87,8 @@ main {
     width: 100%;
     height: auto;
     display: block;
+        max-height: 600px; /* 이 부분을 추가하거나 수정하세요 */
+}
 }
 
 .info-column h2 {

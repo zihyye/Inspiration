@@ -197,31 +197,4 @@ main {
     .content-grid { grid-template-columns: 1fr; }
     .slide-item { flex-basis: 100%; }
 }
-figure {
-  position: relative; /* 부모 요소를 기준으로 삼기 위해 필요 */
-  margin: 0;
-  padding: 0;
-  border: none;
-  display: inline-block;
-}
 
-/* 이미지 위에 올릴 텍스트(캡션) 스타일 */
-figcaption {
-  /* --- 텍스트를 가운데로 옮기는 핵심 코드 --- */
-  position: absolute; /* 부모(figure) 위에 띄우기 */
-  top: 50%; /* 위에서부터 50% 지점 */
-  left: 50%; /* 왼쪽에서부터 50% 지점 */
-  transform: translate(-50%, -50%); /* 자기 크기의 절반만큼 되돌아와서 완벽한 중앙 정렬 */
-  /* ------------------------------------ */
-
-  width: 100%; /* 너비를 꽉 채워서 줄바꿈이 예쁘게 되도록 */
-  padding: 20px;
-  box-sizing: border-box;
-
-  /* 텍스트 디자인 */
-  color: white; /* 흰색 글씨 (어두운 이미지 위에 잘 보임) */
-  text-align: center;
-  font-size: 1.5rem; /* 텍스트 크기 (원하는 대로 조절) */
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 텍스트가 잘 보이도록 그림자 추가 */
-}

@@ -225,10 +225,3 @@ figcaption {
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 텍스트가 잘 보이도록 그림자 추가 */
 }
-
-/* 이미지 자체에 대한 스타일 (선택 사항) */
-figure img {
-  display: block; /* 이미지 아래 불필요한 여백 제거 */
-  width: 100%;
-  filter: brightness(0.7); /* 이미지를 살짝 어둡게 해서 텍스트가 잘 보이도록 */
-}

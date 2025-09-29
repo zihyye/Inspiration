@@ -1,0 +1,196 @@
+/* Pretendard 폰트 CDN */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+:root {
+    --bg-color: #F5F3EF; /* 베이지/아이보리 배경 */
+    --text-color: #333333; /* 기본 텍스트 (블랙 계열) */
+    --text-secondary-color: #888888; /* 보조 텍스트 (그레이 계열) */
+    --title-font: 'Noto Serif KR', serif; /* 타이틀 폰트 */
+    --body-font: 'Pretendard', sans-serif; /* 본문 폰트 */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- 헤더 --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo a {
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.main-nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: var(--text-secondary-color);
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+.main-nav a:hover {
+    color: var(--text-color);
+}
+
+/* --- 메인 콘텐츠 --- */
+main {
+    padding: 40px 0;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
+}
+.hero-section h1 {
+    font-family: var(--title-font);
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-column h2 {
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin: 0 0 25px 0;
+}
+.info-column h2:not(:first-child) {
+    margin-top: 50px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.category-list li {
+    margin-bottom: 15px;
+}
+.category-list a {
+    text-decoration: none;
+    color: var(--text-secondary-color);
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+.category-list a:hover {
+    color: var(--text-color);
+}
+
+
+/* --- 하단 슬라이드 --- */
+.slider-section {
+    padding: 80px 0;
+    overflow: hidden; /* 중요: 슬라이드를 가리기 위함 */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* style.css 파일에서 아래처럼 수정해주세요 */
+
+.slide-item {
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+    /* height와 overflow 속성 제거! */
+}
+
+.slide-item img {
+    width: 100%;
+    height: 450px; /* 이미지 자체에만 높이를 지정 */
+    object-fit: cover; /* 비율을 유지하면서 틀에 꽉 차게 */
+    display: block;
+    margin-bottom: 15px; /* 이미지와 텍스트 사이 간격 추가 */
+}
+}
+
+.slide-caption {
+    margin-top: 15px;
+}
+.slide-caption h3 {
+    font-family: var(--title-font);
+    font-size: 1.3rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+.slide-caption p {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+    margin: 0;
+}
+
+.slider-controls {
+    text-align: right;
+    margin-top: 30px;
+}
+.slider-controls button {
+    background: none;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.slider-controls button:hover {
+    background-color: #eee;
+}
+
+
+/* --- 푸터 --- */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    color: var(--text-secondary-color);
+    font-size: 0.9rem;
+}
+
+/* --- 반응형 웹 --- */
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .content-grid { grid-template-columns: 1fr; }
+    .slide-item { flex-basis: 100%; } /* 모바일에서는 1개씩 */
+}/* style.css 파일 맨 아래에 추가 */
+
+.slider-controls button.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

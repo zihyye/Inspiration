@@ -55,19 +55,7 @@ body {
 main {
     padding: 40px 0;
 }
-figure {
-  margin: 0; /* 기본 여백 제거 */
-  padding: 0;
 
-  display: inline-block; /* 다른 요소와 어울리도록 설정 */
-}
-
-figcaption {
-  padding: 10px; /* 텍스트 주변 여백 */
-  font-size: 0.9rem; /* 약간 작은 글씨 크기 */
-  color: #555; /* 회색 계열 텍스트 */
-  text-align: center; /* 가운데 정렬 */
-}
 .hero-section {
     text-align: center;
     padding: 80px 0;
@@ -79,8 +67,16 @@ figcaption {
     margin: 0;
 }
 
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+    font-weight: 400;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
 .content-grid {
-    display: grid;
+    display: grid; /* 이 부분이 빠지면 좌우 배치가 안됩니다 */
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: flex-start;
@@ -121,3 +117,83 @@ figcaption {
 }
 .category-list a:hover {
     color: var(--text-color);
+}
+
+
+/* --- 하단 슬라이드 --- */
+.slider-section {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex; /* 이 부분이 빠지면 슬라이드가 세로로 쌓입니다 */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+.slide-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.slide-caption {
+    margin-top: 15px;
+}
+.slide-caption h3 {
+    font-family: var(--title-font);
+    font-size: 1.3rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+.slide-caption p {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+    margin: 0;
+}
+
+.slider-controls {
+    text-align: right;
+    margin-top: 30px;
+}
+.slider-controls button {
+    background: none;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.slider-controls button:hover {
+    background-color: #eee;
+}
+
+.slider-controls button.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+
+/* --- 푸터 --- */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    color: var(--text-secondary-color);
+    font-size: 0.9rem;
+}
+
+/* --- 반응형 웹 --- */
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .content-grid { grid-template-columns: 1fr; }
+    .slide-item { flex-basis: 100%; }
+}
